@@ -5,12 +5,12 @@
 using namespace std;
 vector<int> gp[M];
 int a[M],b[M],visited[M];
-void bfs(int s)
+void bfs(int src)
 {
 	queue<int> q;
-	q.push(s);
-	b[s]=0;
-	visited[s]=1;
+	q.push(src);
+	b[src]=0;
+	visited[src]=1;
 	while(!q.empty())
 	{
 		int p=q.front();
