@@ -19,7 +19,7 @@ void build(int tl,int tr,int p){
 	int tm=(tl+tr)/2;
 	build(tl,tm,2*p);
 	build(tm+1,tr,2*p+1);
-	ST[p]=min(ST[2*p],t[2*p+1]);
+	ST[p]=min(ST[2*p],ST[2*p+1]);
 }
 int query(int tl,int tr,int l,int r,int p){
 	if(tl>=l&&tr<=r)
