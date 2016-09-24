@@ -29,6 +29,20 @@ int query(int tl,int tr,int l,int r,int p){
 	int tm=(tl+tr)/2;
 	return min(query(tl,tm,l,r,2*p),query(tm+1,tr,l,r,2*p+1));
 }
+void update(int tl,int tr,int pos,int v,int p)
+{
+	if(tl==tr)
+	{
+		ST[p]=v;
+		return ;
+	}
+	int tm=(tl+tr)/2;
+	if(pos<=tm)
+		update(tl,tm,pos,v,2*p);
+	else
+		update(tm+1,tr,pos,v,2*p+1);
+	ST[p]=max(ST[2*p],ST[2*p+1]);
+}
 int main(){
 	int n;
 	cin>>n;
