@@ -41,7 +41,7 @@ void update(int tl,int tr,int pos,int v,int p)
 		update(tl,tm,pos,v,2*p);
 	else
 		update(tm+1,tr,pos,v,2*p+1);
-	ST[p]=max(ST[2*p],ST[2*p+1]);
+	ST[p]=min(ST[2*p],ST[2*p+1]);
 }
 int main(){
 	int n;
