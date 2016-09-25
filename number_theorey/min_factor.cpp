@@ -23,7 +23,8 @@ int main() {
     for(int i=2;i<111111;i++) {
         if(minprime[i]==-1) {
             for(int j=i;j<111111/i;j++) {
-                minprime[i*j]=i;
+                if(minprime[i*j]==-1)
+                    minprime[i*j]=i;
             }
             minprime[i]=i;
         }
