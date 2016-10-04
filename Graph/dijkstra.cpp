@@ -3,8 +3,8 @@
 #define M_V 987654321
 #define ii pair<int,int>
 #define vi vector<int>
-#define f first
-#define s second
+#define ff first
+#define ss second
 #define mp make_pair
 #define pb push_back
 using namespace std;
@@ -19,10 +19,10 @@ void dijkstra(int sr)
 	{
 		ii p1=*s.begin();
 		s.erase(s.begin());
-		int v=p1.s,d=p1.f;
-		for(auto i=gp[v].begin();i!=gp[v].end();i++)
+		int v=p1.ss,d=p1.ff;
+		for(auto it:gp[v])
 		{
-			int v2=i->f,len=i->s;
+			int v2=it.ff,len=it.ss;
 			if(D[v]+len<D[v2])
 			{
 				if(D[v2]!=M_V)
